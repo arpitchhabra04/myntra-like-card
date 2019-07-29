@@ -8,6 +8,7 @@ import {
   CardSubtitle,
   Button
 } from "reactstrap";
+import SimpleSlider from "./imageSlider";
 class NewCard extends Component {
   constructor(props) {
     super(props);
@@ -16,12 +17,8 @@ class NewCard extends Component {
   render() {
     return (
       <React.Fragment>
-        <CardImg
-          top
-          width="100%"
-          src="https://images.pexels.com/photos/247878/pexels-photo-247878.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          alt="Card image cap"
-        />
+        {/* <CardImg top width="100%" src={<SimpleSlider />} alt="Card image cap" /> */}
+        <SimpleSlider />
         <CardBody className="cardMargin">
           <Button color="danger" className="mt-3 md-3 mr-1" size="sm">
             Add To Cart
