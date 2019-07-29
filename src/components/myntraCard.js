@@ -17,9 +17,35 @@ import {
   CardSubtitle,
   Button
 } from "reactstrap";
+import NewCard from "./afterCard";
+import OldCard from "./oldCard";
 class Myntra extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+    this.state = {
+      islogged: false
+    };
+    this.handleChangeIn = this.handleChangeIn.bind(this);
+    this.handleChangeOut = this.handleChangeOut.bind(this);
+  }
+  handleChangeIn() {
+    this.setState({
+      isLogged: true
+    });
+  }
+  handleChangeOut() {
+    this.setState({
+      isLogged: false
+    });
+  }
   render() {
+    const { isLogged } = this.state;
+    let card;
+    if (isLogged) {
+      card = <NewCard />;
+    } else {
+      card = <OldCard />;
+    }
     return (
       <div className="container">
         <Navbar color="faded" light>
@@ -27,24 +53,16 @@ class Myntra extends Component {
             Mynta Card
           </NavbarBrand>
           <NavbarToggler className="mr-2" />
-          <Collapse isOpen={!this.state.collapsed} navbar />
+          <Collapse navbar />
         </Navbar>
         <div className="row">
-          <div className="col-md-4 mt-4 h-75 d-inline-block">
-            <Card style={{ width: "80%", height: "40%" }}>
-              <CardImg
-                top
-                width="100%"
-                src="https://images.pexels.com/photos/247878/pexels-photo-247878.jpeg?cs=srgb&dl=adolescent-beautiful-beauty-247878.jpg&fm=jpg"
-                alt="Card image cap"
-              />
-              <CardBody>
-                <CardTitle>DressBerry </CardTitle>
-                <CardSubtitle>Top</CardSubtitle>
-                <CardText>
-                  Rs. 554 <strike>Rs. 1499 </strike>(63% OFF)
-                </CardText>
-              </CardBody>
+          <div className="col-md-3 mt-4 h-75 d-inline-block">
+            <Card
+              style={{ width: "80%", height: "20%" }}
+              onMouseEnter={this.handleChangeIn}
+              onMouseLeave={this.handleChangeOut}
+            >
+              {card}
             </Card>
           </div>
         </div>
