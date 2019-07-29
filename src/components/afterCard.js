@@ -1,13 +1,5 @@
 import React, { Component } from "react";
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button
-} from "reactstrap";
+import { CardText, CardBody, CardSubtitle, Button } from "reactstrap";
 import SimpleSlider from "./imageSlider";
 class NewCard extends Component {
   constructor(props) {
@@ -16,7 +8,7 @@ class NewCard extends Component {
   }
   render() {
     return (
-      <React.Fragment>
+      <div className="shadow">
         {/* <CardImg top width="100%" src={<SimpleSlider />} alt="Card image cap" /> */}
         <SimpleSlider />
         <CardBody className="cardMargin">
@@ -37,7 +29,7 @@ class NewCard extends Component {
             <strike>Rs. 1199</strike>(60%)
           </CardText>
         </CardBody>
-      </React.Fragment>
+      </div>
     );
   }
 }

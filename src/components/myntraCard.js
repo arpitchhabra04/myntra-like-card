@@ -1,22 +1,6 @@
 import React, { Component } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink
-} from "reactstrap";
-import {
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button
-} from "reactstrap";
+import { Collapse, Navbar, NavbarToggler, NavbarBrand } from "reactstrap";
+import { Card } from "reactstrap";
 import NewCard from "./afterCard";
 import OldCard from "./oldCard";
 class Myntra extends Component {
@@ -47,23 +31,27 @@ class Myntra extends Component {
       card = <OldCard />;
     }
     return (
-      <div className="container">
-        <Navbar color="faded" light>
-          <NavbarBrand href="/" className="mr-auto">
-            Mynta Card
-          </NavbarBrand>
-          <NavbarToggler className="mr-2" />
-          <Collapse navbar />
+      <div>
+        <Navbar color="faded" light className="navColor">
+          <div className="container">
+            <NavbarBrand href="/" className="mr-auto">
+              Mynta Card
+            </NavbarBrand>
+            <NavbarToggler className="mr-2" />
+            <Collapse navbar />
+          </div>
         </Navbar>
-        <div className="row">
-          <div className="col-md-3 mt-4 h-75 d-inline-block">
-            <Card
-              style={{ width: "80%", height: "20%" }}
-              onMouseEnter={this.handleChangeIn}
-              onMouseLeave={this.handleChangeOut}
-            >
-              {card}
-            </Card>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-3 mt-4 h-75 d-inline-block">
+              <Card
+                style={{ width: "80%", height: "20%" }}
+                onMouseEnter={this.handleChangeIn}
+                onMouseLeave={this.handleChangeOut}
+              >
+                {card}
+              </Card>
+            </div>
           </div>
         </div>
       </div>

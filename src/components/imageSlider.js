@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-// import { baseUrl } from "./config";
 
 export default class SimpleSlider extends Component {
   constructor(props) {

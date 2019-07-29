@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import {
-  Card,
   CardImg,
   CardText,
   CardBody,
   CardTitle,
-  CardSubtitle,
-  Button
+  CardSubtitle
 } from "reactstrap";
 class OldCard extends Component {
   constructor(props) {
